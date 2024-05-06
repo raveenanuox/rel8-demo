@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_landings",
+  "info": {
+    "displayName": "Landing",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

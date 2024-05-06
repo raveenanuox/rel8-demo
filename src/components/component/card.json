@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
