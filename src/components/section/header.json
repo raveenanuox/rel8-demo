@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_section_headers",
+  "info": {
+    "displayName": "Header",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "logoLink": {
+      "type": "string"
+    },
+    "navItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.nav-bar"
+    },
+    "demoButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    }
+  }
+}

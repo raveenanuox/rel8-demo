@@ -172,6 +172,20 @@ export interface ComponentTextBox extends Schema.Component {
   };
 }
 
+export interface SectionHeader extends Schema.Component {
+  collectionName: 'components_section_headers';
+  info: {
+    displayName: 'Header';
+    icon: 'layer';
+  };
+  attributes: {
+    logo: Attribute.Media;
+    logoLink: Attribute.String;
+    navItem: Attribute.Component<'component.nav-bar', true>;
+    demoButton: Attribute.Component<'component.button'>;
+  };
+}
+
 export interface SectionHero extends Schema.Component {
   collectionName: 'components_section_heroes';
   info: {
@@ -201,6 +215,7 @@ declare module '@strapi/types' {
       'component.nav-bar': ComponentNavBar;
       'component.pricing': ComponentPricing;
       'component.text-box': ComponentTextBox;
+      'section.header': SectionHeader;
       'section.hero': SectionHero;
     }
   }
