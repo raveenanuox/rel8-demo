@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "HeroPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
