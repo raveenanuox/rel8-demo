@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_growths",
+  "info": {
+    "displayName": "growth",
+    "icon": "arrowUp"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "countTitle": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    }
+  }
+}

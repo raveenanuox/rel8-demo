@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_demo_fields",
+  "info": {
+    "displayName": "DemoField",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "placeHolder": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "inputType": {
+      "type": "string"
+    }
+  }
+}
