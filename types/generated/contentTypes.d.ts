@@ -362,6 +362,36 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeroPageHeroPage extends Schema.CollectionType {
+  collectionName: 'hero_pages';
+  info: {
+    singularName: 'hero-page';
+    pluralName: 'hero-pages';
+    displayName: 'Hero Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Attribute.DynamicZone<['section.hero']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hero-page.hero-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hero-page.hero-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -798,6 +828,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::hero-page.hero-page': ApiHeroPageHeroPage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

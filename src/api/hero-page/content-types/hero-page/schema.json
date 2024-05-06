@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hero_pages",
+  "info": {
+    "singularName": "hero-page",
+    "pluralName": "hero-pages",
+    "displayName": "Hero Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "dynamiczone",
+      "components": [
+        "section.hero"
+      ]
+    }
+  }
+}

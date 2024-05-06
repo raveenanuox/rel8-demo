@@ -172,6 +172,19 @@ export interface ComponentTextBox extends Schema.Component {
   };
 }
 
+export interface SectionHero extends Schema.Component {
+  collectionName: 'components_section_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'expand';
+  };
+  attributes: {
+    HeroPage: Attribute.Component<'component.landing'>;
+    link: Attribute.Component<'component.button'>;
+    images: Attribute.Media;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -188,6 +201,7 @@ declare module '@strapi/types' {
       'component.nav-bar': ComponentNavBar;
       'component.pricing': ComponentPricing;
       'component.text-box': ComponentTextBox;
+      'section.hero': SectionHero;
     }
   }
 }
