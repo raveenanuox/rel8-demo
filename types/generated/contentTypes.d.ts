@@ -392,7 +392,7 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
 }
 
-export interface ApiHeroPageHeroPage extends Schema.CollectionType {
+export interface ApiHeroPageHeroPage extends Schema.SingleType {
   collectionName: 'hero_pages';
   info: {
     singularName: 'hero-page';
@@ -402,8 +402,18 @@ export interface ApiHeroPageHeroPage extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    banner: Attribute.DynamicZone<['section.hero']>;
+    heroSection: Attribute.DynamicZone<['section.hero']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -419,6 +429,12 @@ export interface ApiHeroPageHeroPage extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hero-page.hero-page',
+      'oneToMany',
+      'api::hero-page.hero-page'
+    >;
+    locale: Attribute.String;
   };
 }
 
