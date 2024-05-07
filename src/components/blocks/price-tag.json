@@ -17,7 +17,7 @@
     },
     "priceSection": {
       "type": "component",
-      "repeatable":true,
+      "repeatable": true,
       "component": "component.pricing"
     }
   }
