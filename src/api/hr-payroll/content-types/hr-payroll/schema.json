@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "hr_payrolls",
+  "info": {
+    "singularName": "hr-payroll",
+    "pluralName": "hr-payrolls",
+    "displayName": "Hr Payroll"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hrPayroll": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "section.payroll"
+      ]
+    }
+  }
+}

@@ -788,6 +788,312 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAiManagementAiManagement extends Schema.SingleType {
+  collectionName: 'ai_managements';
+  info: {
+    singularName: 'ai-management';
+    pluralName: 'ai-managements';
+    displayName: 'AI management';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    AI: Attribute.DynamicZone<['section.ai']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ai-management.ai-management',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ai-management.ai-management',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::ai-management.ai-management',
+      'oneToMany',
+      'api::ai-management.ai-management'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiCompanyCompany extends Schema.SingleType {
+  collectionName: 'companies';
+  info: {
+    singularName: 'company';
+    pluralName: 'companies';
+    displayName: 'Company';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    trustedCompanies: Attribute.DynamicZone<['section.companies']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::company.company',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::company.company',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::company.company',
+      'oneToMany',
+      'api::company.company'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiFosterOrgFosterOrg extends Schema.SingleType {
+  collectionName: 'foster_orgs';
+  info: {
+    singularName: 'foster-org';
+    pluralName: 'foster-orgs';
+    displayName: 'Foster Org';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    fosterOrg: Attribute.DynamicZone<['section.foster']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::foster-org.foster-org',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::foster-org.foster-org',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::foster-org.foster-org',
+      'oneToMany',
+      'api::foster-org.foster-org'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHeaderHeader extends Schema.SingleType {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.DynamicZone<['section.header']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeroPageHeroPage extends Schema.SingleType {
+  collectionName: 'hero_pages';
+  info: {
+    singularName: 'hero-page';
+    pluralName: 'hero-pages';
+    displayName: 'Hero Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    heroSection: Attribute.DynamicZone<['section.hero']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hero-page.hero-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hero-page.hero-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hero-page.hero-page',
+      'oneToMany',
+      'api::hero-page.hero-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHrPayrollHrPayroll extends Schema.SingleType {
+  collectionName: 'hr_payrolls';
+  info: {
+    singularName: 'hr-payroll';
+    pluralName: 'hr-payrolls';
+    displayName: 'Hr Payroll';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    hrPayroll: Attribute.DynamicZone<['section.payroll']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hr-payroll.hr-payroll',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hr-payroll.hr-payroll',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::hr-payroll.hr-payroll',
+      'oneToMany',
+      'api::hr-payroll.hr-payroll'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiOrgAndEmployeeOrgAndEmployee extends Schema.SingleType {
+  collectionName: 'org_and_employees';
+  info: {
+    singularName: 'org-and-employee';
+    pluralName: 'org-and-employees';
+    displayName: 'Org and Employee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    employeeManagement: Attribute.DynamicZone<['section.grid']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::org-and-employee.org-and-employee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::org-and-employee.org-and-employee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::org-and-employee.org-and-employee',
+      'oneToMany',
+      'api::org-and-employee.org-and-employee'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCountListCountList extends Schema.SingleType {
   collectionName: 'count_lists';
   info: {
@@ -1128,6 +1434,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::ai-management.ai-management': ApiAiManagementAiManagement;
+      'api::company.company': ApiCompanyCompany;
+      'api::foster-org.foster-org': ApiFosterOrgFosterOrg;
+      'api::header.header': ApiHeaderHeader;
+      'api::hero-page.hero-page': ApiHeroPageHeroPage;
+      'api::hr-payroll.hr-payroll': ApiHrPayrollHrPayroll;
+      'api::org-and-employee.org-and-employee': ApiOrgAndEmployeeOrgAndEmployee;
       'api::count-list.count-list': ApiCountListCountList;
       'api::employee-card.employee-card': ApiEmployeeCardEmployeeCard;
       'api::header.header': ApiHeaderHeader;

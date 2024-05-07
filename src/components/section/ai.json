@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_ais",
+  "info": {
+    "displayName": "AI",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "aiManagement": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "getStartedButtonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "aiFeaturesGrid": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.grid"
+    }
+  }
+}

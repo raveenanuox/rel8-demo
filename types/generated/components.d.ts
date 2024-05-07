@@ -59,6 +59,7 @@ export interface ComponentCollaboration extends Schema.Component {
   info: {
     displayName: 'collaboration';
     icon: 'expand';
+    description: '';
   };
   attributes: {
     title: Attribute.RichText;
@@ -172,6 +173,59 @@ export interface ComponentTextBox extends Schema.Component {
   };
 }
 
+export interface SectionAi extends Schema.Component {
+  collectionName: 'components_section_ais';
+  info: {
+    displayName: 'AI';
+    icon: 'message';
+  };
+  attributes: {
+    aiManagement: Attribute.Component<'component.landing'>;
+    subTitle: Attribute.String;
+    getStartedButtonLink: Attribute.Component<'component.button'>;
+    aiFeaturesGrid: Attribute.Component<'component.grid', true>;
+  };
+}
+
+export interface SectionCompanies extends Schema.Component {
+  collectionName: 'components_section_companies';
+  info: {
+    displayName: 'Companies';
+    icon: 'link';
+    description: '';
+  };
+  attributes: {
+    trustedCompanies: Attribute.Component<'component.collaboration'>;
+  };
+}
+
+export interface SectionFoster extends Schema.Component {
+  collectionName: 'components_section_fosters';
+  info: {
+    displayName: 'Foster';
+    icon: 'globe';
+  };
+  attributes: {
+    fosterOrgCultureSection: Attribute.Component<'component.landing'>;
+    reqDemoButtonLink: Attribute.Component<'component.button'>;
+    imageCarousel: Attribute.Media;
+  };
+}
+
+export interface SectionGrid extends Schema.Component {
+  collectionName: 'components_section_grids';
+  info: {
+    displayName: 'Employee Grid';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    orgAndEmployees: Attribute.Component<'component.landing'>;
+    reqDemoButton: Attribute.Component<'component.button'>;
+    featuresGrid: Attribute.Component<'component.grid', true>;
+  };
+}
+
 export interface SectionCard extends Schema.Component {
   collectionName: 'components_section_cards';
   info: {
@@ -222,6 +276,20 @@ export interface SectionHero extends Schema.Component {
   };
 }
 
+export interface SectionPayroll extends Schema.Component {
+  collectionName: 'components_section_payrolls';
+  info: {
+    displayName: 'Payroll';
+    icon: 'file';
+  };
+  attributes: {
+    payrollTitle: Attribute.RichText;
+    description: Attribute.Text;
+    reqDemoButtonLink: Attribute.Component<'component.button'>;
+    payrollGrid: Attribute.Component<'component.grid', true>;
+  };
+}
+
 export interface SectionPackage extends Schema.Component {
   collectionName: 'components_section_packages';
   info: {
@@ -263,10 +331,15 @@ declare module '@strapi/types' {
       'component.nav-bar': ComponentNavBar;
       'component.pricing': ComponentPricing;
       'component.text-box': ComponentTextBox;
+      'section.ai': SectionAi;
+      'section.companies': SectionCompanies;
+      'section.foster': SectionFoster;
+      'section.grid': SectionGrid;
       'section.card': SectionCard;
       'section.count': SectionCount;
       'section.header': SectionHeader;
       'section.hero': SectionHero;
+      'section.payroll': SectionPayroll;
       'section.package': SectionPackage;
       'section.transform': SectionTransform;
     }

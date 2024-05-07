@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_payrolls",
+  "info": {
+    "displayName": "Payroll",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "payrollTitle": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "text"
+    },
+    "reqDemoButtonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "payrollGrid": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.grid"
+    }
+  }
+}
