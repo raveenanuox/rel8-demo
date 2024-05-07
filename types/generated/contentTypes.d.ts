@@ -834,6 +834,90 @@ export interface ApiAiManagementAiManagement extends Schema.SingleType {
   };
 }
 
+export interface ApiAppApp extends Schema.SingleType {
+  collectionName: 'apps';
+  info: {
+    singularName: 'app';
+    pluralName: 'apps';
+    displayName: 'App';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    apps: Attribute.DynamicZone<['blocks.fav-app']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::app.app', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::app.app', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::app.app',
+      'oneToMany',
+      'api::app.app'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBookDemoBookDemo extends Schema.SingleType {
+  collectionName: 'book_demos';
+  info: {
+    singularName: 'book-demo';
+    pluralName: 'book-demos';
+    displayName: 'bookDemo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    demo: Attribute.DynamicZone<['blocks.form']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::book-demo.book-demo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::book-demo.book-demo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::book-demo.book-demo',
+      'oneToMany',
+      'api::book-demo.book-demo'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCompanyCompany extends Schema.SingleType {
   collectionName: 'companies';
   info: {
@@ -926,6 +1010,52 @@ export interface ApiCountListCountList extends Schema.SingleType {
   };
 }
 
+export interface ApiEmployeeBenefitEmployeeBenefit extends Schema.SingleType {
+  collectionName: 'employee_benefits';
+  info: {
+    singularName: 'employee-benefit';
+    pluralName: 'employee-benefits';
+    displayName: 'employee Benefit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    benefitBanner: Attribute.DynamicZone<['blocks.benefit']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::employee-benefit.employee-benefit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::employee-benefit.employee-benefit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::employee-benefit.employee-benefit',
+      'oneToMany',
+      'api::employee-benefit.employee-benefit'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiEmployeeCardEmployeeCard extends Schema.SingleType {
   collectionName: 'employee_cards';
   info: {
@@ -967,6 +1097,99 @@ export interface ApiEmployeeCardEmployeeCard extends Schema.SingleType {
       'api::employee-card.employee-card',
       'oneToMany',
       'api::employee-card.employee-card'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiEmployeeExperienceEmployeeExperience
+  extends Schema.SingleType {
+  collectionName: 'employee_experiences';
+  info: {
+    singularName: 'employee-experience';
+    pluralName: 'employee-experiences';
+    displayName: 'employee experience';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    count: Attribute.DynamicZone<['blocks.experience']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::employee-experience.employee-experience',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::employee-experience.employee-experience',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::employee-experience.employee-experience',
+      'oneToMany',
+      'api::employee-experience.employee-experience'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiEmployeeImageEmployeeImage extends Schema.SingleType {
+  collectionName: 'employee_images';
+  info: {
+    singularName: 'employee-image';
+    pluralName: 'employee-images';
+    displayName: 'employeeImage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::employee-image.employee-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::employee-image.employee-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::employee-image.employee-image',
+      'oneToMany',
+      'api::employee-image.employee-image'
     >;
     locale: Attribute.String;
   };
@@ -1202,6 +1425,52 @@ export interface ApiOrgAndEmployeeOrgAndEmployee extends Schema.SingleType {
   };
 }
 
+export interface ApiPricingPricing extends Schema.SingleType {
+  collectionName: 'pricings';
+  info: {
+    singularName: 'pricing';
+    pluralName: 'pricings';
+    displayName: 'pricing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    plans: Attribute.DynamicZone<['blocks.price-tag']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToMany',
+      'api::pricing.pricing'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSmartPhoneSmartPhone extends Schema.SingleType {
   collectionName: 'smart_phones';
   info: {
@@ -1359,14 +1628,20 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::ai-management.ai-management': ApiAiManagementAiManagement;
+      'api::app.app': ApiAppApp;
+      'api::book-demo.book-demo': ApiBookDemoBookDemo;
       'api::company.company': ApiCompanyCompany;
       'api::count-list.count-list': ApiCountListCountList;
+      'api::employee-benefit.employee-benefit': ApiEmployeeBenefitEmployeeBenefit;
       'api::employee-card.employee-card': ApiEmployeeCardEmployeeCard;
+      'api::employee-experience.employee-experience': ApiEmployeeExperienceEmployeeExperience;
+      'api::employee-image.employee-image': ApiEmployeeImageEmployeeImage;
       'api::foster-org.foster-org': ApiFosterOrgFosterOrg;
       'api::header.header': ApiHeaderHeader;
       'api::hero-page.hero-page': ApiHeroPageHeroPage;
       'api::hr-payroll.hr-payroll': ApiHrPayrollHrPayroll;
       'api::org-and-employee.org-and-employee': ApiOrgAndEmployeeOrgAndEmployee;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::smart-phone.smart-phone': ApiSmartPhoneSmartPhone;
       'api::software-package.software-package': ApiSoftwarePackageSoftwarePackage;
       'api::transform-org.transform-org': ApiTransformOrgTransformOrg;

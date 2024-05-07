@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_experiences",
+  "info": {
+    "displayName": "experience",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "percent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.growth"
+    }
+  }
+}
