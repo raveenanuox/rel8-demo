@@ -1,5 +1,60 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BlocksAboutUs extends Schema.Component {
+  collectionName: 'components_blocks_about_uses';
+  info: {
+    displayName: 'About us';
+    icon: 'user';
+    description: '';
+  };
+  attributes: {
+    aboutUs: Attribute.Component<'component.about-us', true>;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+  };
+}
+
+export interface BlocksBlogsAndNews extends Schema.Component {
+  collectionName: 'components_blocks_blogs_and_news';
+  info: {
+    displayName: 'Blogs & News';
+    icon: 'cursor';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    viewAllButton: Attribute.Component<'component.button'>;
+    featuredBlogs: Attribute.Component<'component.blog', true>;
+  };
+}
+
+export interface BlocksFaq extends Schema.Component {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    faqHome: Attribute.Component<'component.landing'>;
+    contactUsButton: Attribute.Component<'component.button'>;
+    questionsAndAnswers: Attribute.Component<'component.faq', true>;
+  };
+}
+
+export interface BlocksFooter extends Schema.Component {
+  collectionName: 'components_blocks_footers';
+  info: {
+    displayName: 'Footer';
+    icon: 'hashtag';
+  };
+  attributes: {
+    logo: Attribute.Media;
+    logoLink: Attribute.String;
+    copyrights: Attribute.String;
+    footerOptions: Attribute.Component<'component.nav-bar', true>;
+  };
+}
+
 export interface ComponentAboutUs extends Schema.Component {
   collectionName: 'components_component_aboutuses';
   info: {
@@ -161,6 +216,24 @@ export interface ComponentPricing extends Schema.Component {
   };
 }
 
+export interface ComponentReadMoreBlogPage extends Schema.Component {
+  collectionName: 'components_component_read_more_blog_page_s';
+  info: {
+    displayName: 'Read More (blog-page)';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    date: Attribute.String;
+    blogTitle: Attribute.String;
+    blogTemplate: Attribute.Media;
+    path: Attribute.Component<'component.nav-bar', true>;
+    slug: Attribute.String;
+    description: Attribute.RichText;
+  };
+}
+
 export interface ComponentTextBox extends Schema.Component {
   collectionName: 'components_component_text_boxes';
   info: {
@@ -318,6 +391,10 @@ export interface SectionTransform extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blocks.about-us': BlocksAboutUs;
+      'blocks.blogs-and-news': BlocksBlogsAndNews;
+      'blocks.faq': BlocksFaq;
+      'blocks.footer': BlocksFooter;
       'component.about-us': ComponentAboutUs;
       'component.blog': ComponentBlog;
       'component.button': ComponentButton;
@@ -330,6 +407,7 @@ declare module '@strapi/types' {
       'component.landing': ComponentLanding;
       'component.nav-bar': ComponentNavBar;
       'component.pricing': ComponentPricing;
+      'component.read-more-blog-page': ComponentReadMoreBlogPage;
       'component.text-box': ComponentTextBox;
       'section.ai': SectionAi;
       'section.card': SectionCard;

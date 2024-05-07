@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "logoLink": {
+      "type": "string"
+    },
+    "copyrights": {
+      "type": "string"
+    },
+    "footerOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.nav-bar"
+    }
+  }
+}
