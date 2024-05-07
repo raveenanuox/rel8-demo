@@ -2,13 +2,11 @@
   "collectionName": "components_component_growths",
   "info": {
     "displayName": "growth",
-    "icon": "arrowUp"
+    "icon": "arrowUp",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "description": {
-      "type": "text"
-    },
     "countTitle": {
       "type": "string"
     },

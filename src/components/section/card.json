@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "chartCircle"
+  },
+  "options": {},
+  "attributes": {
+    "employeeCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.card"
+    }
+  }
+}

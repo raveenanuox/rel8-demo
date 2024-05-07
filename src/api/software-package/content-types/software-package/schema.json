@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "headers",
+  "collectionName": "software_packages",
   "info": {
-    "singularName": "header",
-    "pluralName": "headers",
-    "displayName": "Header"
+    "singularName": "software-package",
+    "pluralName": "software-packages",
+    "displayName": "softwarePackage"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "packages": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -23,7 +23,7 @@
       },
       "type": "dynamiczone",
       "components": [
-        "section.header"
+        "section.package"
       ]
     }
   }

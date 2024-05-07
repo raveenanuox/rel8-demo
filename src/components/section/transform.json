@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_transforms",
+  "info": {
+    "displayName": "transform",
+    "icon": "cloud"
+  },
+  "options": {},
+  "attributes": {
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

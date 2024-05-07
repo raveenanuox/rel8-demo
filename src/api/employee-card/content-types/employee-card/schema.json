@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "headers",
+  "collectionName": "employee_cards",
   "info": {
-    "singularName": "header",
-    "pluralName": "headers",
-    "displayName": "Header"
+    "singularName": "employee-card",
+    "pluralName": "employee-cards",
+    "displayName": "employeeCard"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "card": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -23,7 +23,7 @@
       },
       "type": "dynamiczone",
       "components": [
-        "section.header"
+        "section.card"
       ]
     }
   }

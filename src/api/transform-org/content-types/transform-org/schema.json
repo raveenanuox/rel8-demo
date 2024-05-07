@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "headers",
+  "collectionName": "transform_orgs",
   "info": {
-    "singularName": "header",
-    "pluralName": "headers",
-    "displayName": "Header"
+    "singularName": "transform-org",
+    "pluralName": "transform-orgs",
+    "displayName": "transformOrg"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "transform": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -23,7 +23,7 @@
       },
       "type": "dynamiczone",
       "components": [
-        "section.header"
+        "section.transform"
       ]
     }
   }

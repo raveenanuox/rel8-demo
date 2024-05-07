@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "headers",
+  "collectionName": "count_lists",
   "info": {
-    "singularName": "header",
-    "pluralName": "headers",
-    "displayName": "Header"
+    "singularName": "count-list",
+    "pluralName": "count-lists",
+    "displayName": "countList"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "countGrowth": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -23,7 +23,7 @@
       },
       "type": "dynamiczone",
       "components": [
-        "section.header"
+        "section.count"
       ]
     }
   }

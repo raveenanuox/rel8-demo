@@ -111,9 +111,9 @@ export interface ComponentGrowth extends Schema.Component {
   info: {
     displayName: 'growth';
     icon: 'arrowUp';
+    description: '';
   };
   attributes: {
-    description: Attribute.Text;
     countTitle: Attribute.String;
     count: Attribute.Integer;
   };
@@ -172,6 +172,29 @@ export interface ComponentTextBox extends Schema.Component {
   };
 }
 
+export interface SectionCard extends Schema.Component {
+  collectionName: 'components_section_cards';
+  info: {
+    displayName: 'Card';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    employeeCard: Attribute.Component<'component.card', true>;
+  };
+}
+
+export interface SectionCount extends Schema.Component {
+  collectionName: 'components_section_counts';
+  info: {
+    displayName: 'count';
+    icon: 'archive';
+  };
+  attributes: {
+    description: Attribute.Text;
+    countInfo: Attribute.Component<'component.growth', true>;
+  };
+}
+
 export interface SectionHeader extends Schema.Component {
   collectionName: 'components_section_headers';
   info: {
@@ -199,6 +222,31 @@ export interface SectionHero extends Schema.Component {
   };
 }
 
+export interface SectionPackage extends Schema.Component {
+  collectionName: 'components_section_packages';
+  info: {
+    displayName: 'package';
+    icon: 'cog';
+  };
+  attributes: {
+    heading: Attribute.RichText;
+    spanHeading: Attribute.Text;
+    pages: Attribute.Component<'component.grid', true>;
+  };
+}
+
+export interface SectionTransform extends Schema.Component {
+  collectionName: 'components_section_transforms';
+  info: {
+    displayName: 'transform';
+    icon: 'cloud';
+  };
+  attributes: {
+    main: Attribute.Component<'component.landing'>;
+    image: Attribute.Media;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -215,8 +263,12 @@ declare module '@strapi/types' {
       'component.nav-bar': ComponentNavBar;
       'component.pricing': ComponentPricing;
       'component.text-box': ComponentTextBox;
+      'section.card': SectionCard;
+      'section.count': SectionCount;
       'section.header': SectionHeader;
       'section.hero': SectionHero;
+      'section.package': SectionPackage;
+      'section.transform': SectionTransform;
     }
   }
 }

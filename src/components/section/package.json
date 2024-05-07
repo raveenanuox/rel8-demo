@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_packages",
+  "info": {
+    "displayName": "package",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "richtext"
+    },
+    "spanHeading": {
+      "type": "text"
+    },
+    "pages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.grid"
+    }
+  }
+}
