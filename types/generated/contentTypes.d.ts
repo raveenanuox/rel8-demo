@@ -833,6 +833,51 @@ export interface ApiAiManagementAiManagement extends Schema.SingleType {
     locale: Attribute.String;
   };
 }
+export interface ApiAboutUsSectionAboutUsSection extends Schema.SingleType {
+  collectionName: 'about_us_sections';
+  info: {
+    singularName: 'about-us-section';
+    pluralName: 'about-us-sections';
+    displayName: 'About us Section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    employeeFeedback: Attribute.DynamicZone<['blocks.about-us']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us-section.about-us-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us-section.about-us-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::about-us-section.about-us-section',
+      'oneToMany',
+      'api::about-us-section.about-us-section'
+    >;
+    locale: Attribute.String;
+  };
+}
 
 export interface ApiAppApp extends Schema.SingleType {
   collectionName: 'apps';
@@ -963,6 +1008,43 @@ export interface ApiCompanyCompany extends Schema.SingleType {
     locale: Attribute.String;
   };
 }
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blogsAndNews: Attribute.DynamicZone<['blocks.blogs-and-news']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    locale: Attribute.String;
+  };
+}
 
 export interface ApiCountListCountList extends Schema.SingleType {
   collectionName: 'count_lists';
@@ -1005,6 +1087,51 @@ export interface ApiCountListCountList extends Schema.SingleType {
       'api::count-list.count-list',
       'oneToMany',
       'api::count-list.count-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+export interface ApiFaqFieldFaqField extends Schema.SingleType {
+  collectionName: 'faq_fields';
+  info: {
+    singularName: 'faq-field';
+    pluralName: 'faq-fields';
+    displayName: 'FAQ Field';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    faqSection: Attribute.DynamicZone<['blocks.faq']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-field.faq-field',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-field.faq-field',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::faq-field.faq-field',
+      'oneToMany',
+      'api::faq-field.faq-field'
     >;
     locale: Attribute.String;
   };
@@ -1097,6 +1224,51 @@ export interface ApiEmployeeCardEmployeeCard extends Schema.SingleType {
       'api::employee-card.employee-card',
       'oneToMany',
       'api::employee-card.employee-card'
+    >;
+    locale: Attribute.String;
+  };
+}
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    footerOptions: Attribute.DynamicZone<['blocks.footer']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::footer.footer'
     >;
     locale: Attribute.String;
   };
@@ -1378,6 +1550,52 @@ export interface ApiHrPayrollHrPayroll extends Schema.SingleType {
     locale: Attribute.String;
   };
 }
+export interface ApiReadMoreBlogReadMoreBlog extends Schema.SingleType {
+  collectionName: 'read_more_blogs';
+  info: {
+    singularName: 'read-more-blog';
+    pluralName: 'read-more-blogs';
+    displayName: 'Read More (blog)';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blogHome: Attribute.DynamicZone<['component.read-more-blog-page']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::read-more-blog.read-more-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::read-more-blog.read-more-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::read-more-blog.read-more-blog',
+      'oneToMany',
+      'api::read-more-blog.read-more-blog'
+    >;
+    locale: Attribute.String;
+  };
+}
 
 export interface ApiOrgAndEmployeeOrgAndEmployee extends Schema.SingleType {
   collectionName: 'org_and_employees';
@@ -1639,12 +1857,17 @@ declare module '@strapi/types' {
       'api::foster-org.foster-org': ApiFosterOrgFosterOrg;
       'api::header.header': ApiHeaderHeader;
       'api::hero-page.hero-page': ApiHeroPageHeroPage;
+      'api::about-us-section.about-us-section': ApiAboutUsSectionAboutUsSection;
+      'api::blog.blog': ApiBlogBlog;
+      'api::faq-field.faq-field': ApiFaqFieldFaqField;
+      'api::footer.footer': ApiFooterFooter;
       'api::hr-payroll.hr-payroll': ApiHrPayrollHrPayroll;
       'api::org-and-employee.org-and-employee': ApiOrgAndEmployeeOrgAndEmployee;
       'api::pricing.pricing': ApiPricingPricing;
       'api::smart-phone.smart-phone': ApiSmartPhoneSmartPhone;
       'api::software-package.software-package': ApiSoftwarePackageSoftwarePackage;
       'api::transform-org.transform-org': ApiTransformOrgTransformOrg;
+      'api::read-more-blog.read-more-blog': ApiReadMoreBlogReadMoreBlog;
     }
   }
 }

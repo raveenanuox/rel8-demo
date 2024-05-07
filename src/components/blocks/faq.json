@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "faqHome": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "contactUsButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "questionsAndAnswers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.faq"
+    }
+  }
+}
