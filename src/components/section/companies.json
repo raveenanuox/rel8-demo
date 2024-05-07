@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_companies",
+  "info": {
+    "displayName": "Companies",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.collaboration"
+    }
+  }
+}

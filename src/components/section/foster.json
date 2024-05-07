@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_fosters",
+  "info": {
+    "displayName": "Foster",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "fosterOrgCultureSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "reqDemoButtonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "imageCarousel": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

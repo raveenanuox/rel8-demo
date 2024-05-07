@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_grids",
+  "info": {
+    "displayName": "Employee Grid",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "orgAndEmployees": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.landing"
+    },
+    "reqDemoButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "featuresGrid": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.grid"
+    }
+  }
+}
