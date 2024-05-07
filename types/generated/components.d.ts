@@ -187,6 +187,17 @@ export interface SectionAi extends Schema.Component {
   };
 }
 
+export interface SectionCard extends Schema.Component {
+  collectionName: 'components_section_cards';
+  info: {
+    displayName: 'Card';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    employeeCard: Attribute.Component<'component.card', true>;
+  };
+}
+
 export interface SectionCompanies extends Schema.Component {
   collectionName: 'components_section_companies';
   info: {
@@ -196,6 +207,18 @@ export interface SectionCompanies extends Schema.Component {
   };
   attributes: {
     trustedCompanies: Attribute.Component<'component.collaboration'>;
+  };
+}
+
+export interface SectionCount extends Schema.Component {
+  collectionName: 'components_section_counts';
+  info: {
+    displayName: 'count';
+    icon: 'archive';
+  };
+  attributes: {
+    description: Attribute.Text;
+    countInfo: Attribute.Component<'component.growth', true>;
   };
 }
 
@@ -226,29 +249,6 @@ export interface SectionGrid extends Schema.Component {
   };
 }
 
-export interface SectionCard extends Schema.Component {
-  collectionName: 'components_section_cards';
-  info: {
-    displayName: 'Card';
-    icon: 'chartCircle';
-  };
-  attributes: {
-    employeeCard: Attribute.Component<'component.card', true>;
-  };
-}
-
-export interface SectionCount extends Schema.Component {
-  collectionName: 'components_section_counts';
-  info: {
-    displayName: 'count';
-    icon: 'archive';
-  };
-  attributes: {
-    description: Attribute.Text;
-    countInfo: Attribute.Component<'component.growth', true>;
-  };
-}
-
 export interface SectionHeader extends Schema.Component {
   collectionName: 'components_section_headers';
   info: {
@@ -276,6 +276,19 @@ export interface SectionHero extends Schema.Component {
   };
 }
 
+export interface SectionPackage extends Schema.Component {
+  collectionName: 'components_section_packages';
+  info: {
+    displayName: 'package';
+    icon: 'cog';
+  };
+  attributes: {
+    heading: Attribute.RichText;
+    spanHeading: Attribute.Text;
+    pages: Attribute.Component<'component.grid', true>;
+  };
+}
+
 export interface SectionPayroll extends Schema.Component {
   collectionName: 'components_section_payrolls';
   info: {
@@ -287,19 +300,6 @@ export interface SectionPayroll extends Schema.Component {
     description: Attribute.Text;
     reqDemoButtonLink: Attribute.Component<'component.button'>;
     payrollGrid: Attribute.Component<'component.grid', true>;
-  };
-}
-
-export interface SectionPackage extends Schema.Component {
-  collectionName: 'components_section_packages';
-  info: {
-    displayName: 'package';
-    icon: 'cog';
-  };
-  attributes: {
-    heading: Attribute.RichText;
-    spanHeading: Attribute.Text;
-    pages: Attribute.Component<'component.grid', true>;
   };
 }
 
@@ -332,15 +332,15 @@ declare module '@strapi/types' {
       'component.pricing': ComponentPricing;
       'component.text-box': ComponentTextBox;
       'section.ai': SectionAi;
+      'section.card': SectionCard;
       'section.companies': SectionCompanies;
+      'section.count': SectionCount;
       'section.foster': SectionFoster;
       'section.grid': SectionGrid;
-      'section.card': SectionCard;
-      'section.count': SectionCount;
       'section.header': SectionHeader;
       'section.hero': SectionHero;
-      'section.payroll': SectionPayroll;
       'section.package': SectionPackage;
+      'section.payroll': SectionPayroll;
       'section.transform': SectionTransform;
     }
   }
