@@ -1,5 +1,19 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BlocksAboutUs extends Schema.Component {
+  collectionName: 'components_blocks_about_uses';
+  info: {
+    displayName: 'About us';
+    icon: 'user';
+    description: '';
+  };
+  attributes: {
+    aboutUs: Attribute.Component<'component.about-us', true>;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+  };
+}
+
 export interface BlocksBenefit extends Schema.Component {
   collectionName: 'components_blocks_benefits';
   info: {
@@ -15,6 +29,20 @@ export interface BlocksBenefit extends Schema.Component {
   };
 }
 
+export interface BlocksBlogsAndNews extends Schema.Component {
+  collectionName: 'components_blocks_blogs_and_news';
+  info: {
+    displayName: 'Blogs & News';
+    icon: 'cursor';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    viewAllButton: Attribute.Component<'component.button'>;
+    featuredBlogs: Attribute.Component<'component.blog', true>;
+  };
+}
+
 export interface BlocksExperience extends Schema.Component {
   collectionName: 'components_blocks_experiences';
   info: {
@@ -24,6 +52,19 @@ export interface BlocksExperience extends Schema.Component {
   attributes: {
     title: Attribute.RichText;
     percent: Attribute.Component<'component.growth', true>;
+  };
+}
+
+export interface BlocksFaq extends Schema.Component {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    faqHome: Attribute.Component<'component.landing'>;
+    contactUsButton: Attribute.Component<'component.button'>;
+    questionsAndAnswers: Attribute.Component<'component.faq', true>;
   };
 }
 
@@ -37,6 +78,20 @@ export interface BlocksFavApp extends Schema.Component {
     title: Attribute.String;
     subTitle: Attribute.Text;
     appImage: Attribute.Media;
+  };
+}
+
+export interface BlocksFooter extends Schema.Component {
+  collectionName: 'components_blocks_footers';
+  info: {
+    displayName: 'Footer';
+    icon: 'hashtag';
+  };
+  attributes: {
+    logo: Attribute.Media;
+    logoLink: Attribute.String;
+    copyrights: Attribute.String;
+    footerOptions: Attribute.Component<'component.nav-bar', true>;
   };
 }
 
@@ -75,61 +130,6 @@ export interface BlocksPriceTag extends Schema.Component {
     subTitle: Attribute.Text;
     description: Attribute.Text;
     priceSection: Attribute.Component<'component.pricing', true>;
-  };
-}
-
-export interface BlocksAboutUs extends Schema.Component {
-  collectionName: 'components_blocks_about_uses';
-  info: {
-    displayName: 'About us';
-    icon: 'user';
-    description: '';
-  };
-  attributes: {
-    aboutUs: Attribute.Component<'component.about-us', true>;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-  };
-}
-
-export interface BlocksBlogsAndNews extends Schema.Component {
-  collectionName: 'components_blocks_blogs_and_news';
-  info: {
-    displayName: 'Blogs & News';
-    icon: 'cursor';
-  };
-  attributes: {
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    viewAllButton: Attribute.Component<'component.button'>;
-    featuredBlogs: Attribute.Component<'component.blog', true>;
-  };
-}
-
-export interface BlocksFaq extends Schema.Component {
-  collectionName: 'components_blocks_faqs';
-  info: {
-    displayName: 'FAQ';
-    icon: 'question';
-  };
-  attributes: {
-    faqHome: Attribute.Component<'component.landing'>;
-    contactUsButton: Attribute.Component<'component.button'>;
-    questionsAndAnswers: Attribute.Component<'component.faq', true>;
-  };
-}
-
-export interface BlocksFooter extends Schema.Component {
-  collectionName: 'components_blocks_footers';
-  info: {
-    displayName: 'Footer';
-    icon: 'hashtag';
-  };
-  attributes: {
-    logo: Attribute.Media;
-    logoLink: Attribute.String;
-    copyrights: Attribute.String;
-    footerOptions: Attribute.Component<'component.nav-bar', true>;
   };
 }
 
@@ -470,15 +470,15 @@ export interface SectionTransform extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blocks.about-us': BlocksAboutUs;
       'blocks.benefit': BlocksBenefit;
+      'blocks.blogs-and-news': BlocksBlogsAndNews;
       'blocks.experience': BlocksExperience;
+      'blocks.faq': BlocksFaq;
       'blocks.fav-app': BlocksFavApp;
+      'blocks.footer': BlocksFooter;
       'blocks.form': BlocksForm;
       'blocks.price-tag': BlocksPriceTag;
-      'blocks.about-us': BlocksAboutUs;
-      'blocks.blogs-and-news': BlocksBlogsAndNews;
-      'blocks.faq': BlocksFaq;
-      'blocks.footer': BlocksFooter;
       'component.about-us': ComponentAboutUs;
       'component.blog': ComponentBlog;
       'component.button': ComponentButton;
