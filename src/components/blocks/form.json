@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_blocks_forms",
+  "info": {
+    "displayName": "form",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "fields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.demo-field"
+    },
+    "countryCode": {
+      "type": "enumeration",
+      "enum": [
+        "&#x002B;971",
+        "&#x002B;973",
+        "&#x002B;974",
+        "&#x002B;966",
+        "&#x002B;968"
+      ]
+    },
+    "otherFields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.demo-field"
+    },
+    "submit": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    }
+  }
+}

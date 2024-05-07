@@ -1,5 +1,83 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BlocksBenefit extends Schema.Component {
+  collectionName: 'components_blocks_benefits';
+  info: {
+    displayName: 'benefit';
+    icon: 'layout';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    benefits: Attribute.Component<'component.text-box', true>;
+    demo: Attribute.Component<'component.button'>;
+  };
+}
+
+export interface BlocksExperience extends Schema.Component {
+  collectionName: 'components_blocks_experiences';
+  info: {
+    displayName: 'experience';
+    icon: 'earth';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    percent: Attribute.Component<'component.growth', true>;
+  };
+}
+
+export interface BlocksFavApp extends Schema.Component {
+  collectionName: 'components_blocks_fav_apps';
+  info: {
+    displayName: 'Fav App';
+    icon: 'grid';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.Text;
+    appImage: Attribute.Media;
+  };
+}
+
+export interface BlocksForm extends Schema.Component {
+  collectionName: 'components_blocks_forms';
+  info: {
+    displayName: 'form';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    fields: Attribute.Component<'component.demo-field', true>;
+    countryCode: Attribute.Enumeration<
+      [
+        '&#x002B;971',
+        '&#x002B;973',
+        '&#x002B;974',
+        '&#x002B;966',
+        '&#x002B;968'
+      ]
+    >;
+    otherFields: Attribute.Component<'component.demo-field', true>;
+    submit: Attribute.Component<'component.button'>;
+  };
+}
+
+export interface BlocksPriceTag extends Schema.Component {
+  collectionName: 'components_blocks_price_tags';
+  info: {
+    displayName: 'priceTag';
+    icon: 'priceTag';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.Text;
+    description: Attribute.Text;
+    priceSection: Attribute.Component<'component.pricing', true>;
+  };
+}
+
 export interface BlocksAboutUs extends Schema.Component {
   collectionName: 'components_blocks_about_uses';
   info: {
@@ -213,6 +291,7 @@ export interface ComponentPricing extends Schema.Component {
     planType: Attribute.String;
     isPopular: Attribute.Boolean & Attribute.DefaultTo<false>;
     features: Attribute.Component<'component.text-box', true>;
+    book: Attribute.Component<'component.button'>;
   };
 }
 
@@ -391,6 +470,11 @@ export interface SectionTransform extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blocks.benefit': BlocksBenefit;
+      'blocks.experience': BlocksExperience;
+      'blocks.fav-app': BlocksFavApp;
+      'blocks.form': BlocksForm;
+      'blocks.price-tag': BlocksPriceTag;
       'blocks.about-us': BlocksAboutUs;
       'blocks.blogs-and-news': BlocksBlogsAndNews;
       'blocks.faq': BlocksFaq;

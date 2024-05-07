@@ -1,31 +1,24 @@
 {
-  "collectionName": "components_component_pricings",
+  "collectionName": "components_blocks_benefits",
   "info": {
-    "displayName": "pricing",
-    "icon": "priceTag",
+    "displayName": "benefit",
+    "icon": "layout",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "planTitle": {
+    "title": {
       "type": "string"
     },
-    "planDesc": {
+    "description": {
       "type": "text"
     },
-    "planType": {
-      "type": "string"
-    },
-    "isPopular": {
-      "type": "boolean",
-      "default": false
-    },
-    "features": {
+    "benefits": {
       "type": "component",
       "repeatable": true,
       "component": "component.text-box"
     },
-    "book": {
+    "demo": {
       "type": "component",
       "repeatable": false,
       "component": "component.button"
