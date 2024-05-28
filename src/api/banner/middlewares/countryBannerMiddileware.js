@@ -13,7 +13,7 @@
      // Initialize query with populate
      ctx.query = {
        ...ctx.query,
-      // populate: "*"
+      populate: "*"
      };
  
      // Add country filter if country is specified
