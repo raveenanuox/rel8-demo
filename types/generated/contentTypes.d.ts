@@ -918,6 +918,64 @@ export interface ApiAppApp extends Schema.SingleType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'banner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    country: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'api::country.country'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::banner.banner',
+      'oneToMany',
+      'api::banner.banner'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -1091,6 +1149,36 @@ export interface ApiCountListCountList extends Schema.SingleType {
       'api::count-list.count-list'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiCountryCountry extends Schema.CollectionType {
+  collectionName: 'countries';
+  info: {
+    singularName: 'country';
+    pluralName: 'countries';
+    displayName: 'Country';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    countryName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::country.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::country.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1853,10 +1941,12 @@ declare module '@strapi/types' {
       'api::about-us-section.about-us-section': ApiAboutUsSectionAboutUsSection;
       'api::ai-management.ai-management': ApiAiManagementAiManagement;
       'api::app.app': ApiAppApp;
+      'api::banner.banner': ApiBannerBanner;
       'api::blog.blog': ApiBlogBlog;
       'api::book-demo.book-demo': ApiBookDemoBookDemo;
       'api::company.company': ApiCompanyCompany;
       'api::count-list.count-list': ApiCountListCountList;
+      'api::country.country': ApiCountryCountry;
       'api::employee-benefit.employee-benefit': ApiEmployeeBenefitEmployeeBenefit;
       'api::employee-card.employee-card': ApiEmployeeCardEmployeeCard;
       'api::employee-experience.employee-experience': ApiEmployeeExperienceEmployeeExperience;
