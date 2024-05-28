@@ -22,10 +22,10 @@ export interface BlocksBenefit extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
     description: Attribute.Text;
     benefits: Attribute.Component<'component.text-box', true>;
     demo: Attribute.Component<'component.button'>;
+    title: Attribute.RichText;
   };
 }
 
@@ -34,6 +34,7 @@ export interface BlocksBlogsAndNews extends Schema.Component {
   info: {
     displayName: 'Blogs & News';
     icon: 'cursor';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -73,6 +74,7 @@ export interface BlocksFavApp extends Schema.Component {
   info: {
     displayName: 'Fav App';
     icon: 'grid';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -153,6 +155,7 @@ export interface ComponentBlog extends Schema.Component {
   info: {
     displayName: 'blog';
     icon: 'crop';
+    description: '';
   };
   attributes: {
     date: Attribute.String;
@@ -197,7 +200,7 @@ export interface ComponentCollaboration extends Schema.Component {
   attributes: {
     title: Attribute.RichText;
     description: Attribute.Text;
-    image: Attribute.Media;
+    logo: Attribute.Media;
   };
 }
 
@@ -359,6 +362,7 @@ export interface SectionCompanies extends Schema.Component {
   };
   attributes: {
     trustedCompanies: Attribute.Component<'component.collaboration'>;
+    demo: Attribute.Component<'component.button'>;
   };
 }
 

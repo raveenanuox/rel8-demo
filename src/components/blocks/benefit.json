@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "description": {
       "type": "text"
     },
@@ -22,6 +19,9 @@
       "type": "component",
       "repeatable": false,
       "component": "component.button"
+    },
+    "title": {
+      "type": "richtext"
     }
   }
 }

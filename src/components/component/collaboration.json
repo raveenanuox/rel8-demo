@@ -13,7 +13,7 @@
     "description": {
       "type": "text"
     },
-    "image": {
+    "logo": {
       "type": "media",
       "multiple": true,
       "required": false,

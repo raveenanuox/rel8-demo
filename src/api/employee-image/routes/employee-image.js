@@ -6,4 +6,9 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::employee-image.employee-image');
+module.exports = createCoreRouter('api::employee-image.employee-image', {
+    config: {
+        find: { middlewares: ["api::employee-image.employee-image-section-middleware"] },
+        findOne: { middlewares: ["api::employee-image.employee-image-section-middleware"] },
+      },
+});
