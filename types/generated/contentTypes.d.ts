@@ -1694,6 +1694,40 @@ export interface ApiReadMoreBlogReadMoreBlog extends Schema.SingleType {
   };
 }
 
+export interface ApiRegisterRegister extends Schema.CollectionType {
+  collectionName: 'registers';
+  info: {
+    singularName: 'register';
+    pluralName: 'registers';
+    displayName: 'register';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    age: Attribute.Decimal;
+    email: Attribute.Email & Attribute.Required;
+    password: Attribute.Password;
+    address: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::register.register',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::register.register',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSmartPhoneSmartPhone extends Schema.SingleType {
   collectionName: 'smart_phones';
   info: {
@@ -1870,6 +1904,7 @@ declare module '@strapi/types' {
       'api::org-and-employee.org-and-employee': ApiOrgAndEmployeeOrgAndEmployee;
       'api::pricing.pricing': ApiPricingPricing;
       'api::read-more-blog.read-more-blog': ApiReadMoreBlogReadMoreBlog;
+      'api::register.register': ApiRegisterRegister;
       'api::smart-phone.smart-phone': ApiSmartPhoneSmartPhone;
       'api::software-package.software-package': ApiSoftwarePackageSoftwarePackage;
       'api::transform-org.transform-org': ApiTransformOrgTransformOrg;
