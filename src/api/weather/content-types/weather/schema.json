@@ -1,0 +1,35 @@
+{
+    "kind": "collectionType",
+    "collectionName": "weathers",
+    "info": {
+      "singularName": "weather",
+      "pluralName": "weathers",
+      "displayName": "weather"},
+    "options": {
+        "draftAndPublish": true,
+      "timestamps": true
+    },
+    "attributes": {
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "region": {
+        "type": "string",
+        "required": true
+      },
+      "country": {
+        "type": "string"
+      },
+      "localTime": {
+        "type": "date"
+       },
+       "condition": {
+         "type": "string"
+       },
+       "tz-id": {
+         "type": "text"
+        }
+    }
+  }
+  
