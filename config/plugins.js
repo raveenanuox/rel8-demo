@@ -5,5 +5,9 @@ module.exports = ({ env }) => ({
         populateMaxDepth: env('LOCALAZY_POPULATE_MAX_DEPTH', 10), // default is 10
       },
     },
+    'weather': {
+      enabled: true,
+      resolve: './src/plugins/weather'
+    },
   });
   
