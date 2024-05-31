@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * `appMiddleware` middleware
+ * `appMiddlewares` middleware
  */
 const populate = {
   apps: {
